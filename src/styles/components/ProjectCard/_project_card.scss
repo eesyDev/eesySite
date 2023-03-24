@@ -1,0 +1,43 @@
+.project-card {
+    background-color: #F7FAFC;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: all .3s ease-in-out;
+    &__icon {
+        width: 90px;
+        height: 90px;
+        background-color: #fff;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__title {
+        font-size: 1.4em;
+        // transition: all .3s ease-in-out;
+    }
+    &__more {
+        display: flex;
+        color: var(--main-color);
+        text-transform: uppercase;
+        align-items: center;
+        i {
+            margin-left: 1em;
+        }
+    }
+    &:hover {
+        background-color: var(--main-color);
+        color: #fff;
+        .project-card__title {
+            color: #fff;
+        }
+        .project-card__more {
+            color: #fff;
+            svg path {
+                fill: #fff;
+            }
+        }
+    }
+}

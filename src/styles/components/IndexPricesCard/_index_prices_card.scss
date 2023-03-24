@@ -1,0 +1,33 @@
+.index-prices-card {
+    border-radius: 25px;
+    background-color: #fff;
+    padding: 40px;
+    text-align: center;
+    &:nth-child(2) {
+        background-color: #031D5B;
+        margin: 0 30px;
+        color: #fff;
+    }
+    &__title {
+        font-size: 1.289em;
+        font-weight: 600;
+    }
+    &__price {        
+        .from {
+            font-size: 20px;
+            color: inherit;
+        }
+        .price {
+            color: var(--main-color);
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+    }
+    &__service-list {
+        text-align: left;
+        li {
+            display: flex;
+            align-items: center;
+        }
+    }
+} 

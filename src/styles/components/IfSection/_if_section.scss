@@ -1,0 +1,35 @@
+.if-section {
+    margin-top: 200px;
+    &__wrapper {
+        margin-top: 50px;
+    }
+    &__heading {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    ul {
+        margin-top: 20px;
+        li {
+            position: relative;
+            margin-bottom: 20px;
+            margin-left: 25px;
+            &:before {
+                content: '';
+                position: absolute;
+                left: -25px;
+                width: 14px;
+                height: 14px;
+                background-color: var(--main-color);
+                border-radius: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    &__illustration {
+        svg {
+            transform: translateY(-50px);
+            height: 400px;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.footer {
+    padding-top: 80px;
+    &__column {
+        // &:not(:last-child) {
+        //     padding-right: 50px;
+        // }
+        ul {
+            padding: 0;
+        }
+        &-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+    }
+    &__bottom {
+        background-color: var(--main-color);
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
+}

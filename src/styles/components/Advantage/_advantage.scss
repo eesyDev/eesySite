@@ -1,0 +1,45 @@
+.advantage {
+    margin-top: 100px;
+    &__card {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        position: relative;
+        z-index: 2;
+        &-heading {
+            display: flex;
+            font-size: 1.1em;
+            font-weight: 600;
+            align-items: center;
+        }
+    }
+    &__illustration {
+        position: relative;
+        svg {
+            position: absolute;
+            width: 120%;
+        }
+    }
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+    .column-right {
+        justify-content: center;
+    }
+    &__content {
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #197BD6;
+            filter: blur(300px);
+            width: 280px;
+            height: 280px;
+            z-index: 0;
+        }
+    }
+}

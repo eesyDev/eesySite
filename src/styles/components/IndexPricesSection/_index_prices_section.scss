@@ -1,0 +1,53 @@
+.index-prices {
+    background-color: var(--main-color);
+    background-image: url('../../../../public/img/dottedpattern.png');
+    padding-top: 100px;
+    // color: #fff;
+    .sub-title {
+        color: #fff;
+    }
+    &__inner {
+        margin-top: 80px;
+    }
+    &__cta {
+        margin-top: 100px;
+    }
+    &__description {
+        transform: translateY(100px);
+        &-section {
+            p {
+                color: #fff;
+                font-size: 1.22em;
+            }
+        }
+    }
+   &__display {
+    margin-top: 150px;
+    position: relative;
+    .main {
+        box-shadow: 0 4px 100px rgba(39, 57, 218, 0.2);
+        display: block;
+        border-radius: 25px;
+        margin: 0 auto;
+        width: 70%;
+    }
+    .left {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 35px 17px 40px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        width: 20%;
+    }
+    .right {
+        position: absolute;
+        right: 0;
+        top: 0%;
+        transform: translateY(-50%);
+        box-shadow: -8px 1px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        width: 30%;
+    }
+   }
+}
