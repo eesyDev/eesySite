@@ -65,7 +65,7 @@ function Footer() {
                 </div>
             </div>
         </div>
-        <div className='footer__bottom'>
+        <div className='footer__bottom mt-[50px]'>
             <div className='flex text-center'>Copyright © 2023 EEsydev, All Rights Reserved.</div>
         </div>
     </div>

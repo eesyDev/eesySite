@@ -853,6 +853,10 @@ select {
   margin-top: 80px;
 }
 
+.mt-\[50px\] {
+  margin-top: 50px;
+}
+
 .block {
   display: block;
 }
@@ -927,20 +931,16 @@ select {
   padding-bottom: 2rem;
 }
 
-.pr-10 {
-  padding-right: 2.5rem;
-}
-
 .pr-6 {
   padding-right: 1.5rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
 .pr-\[50px\] {
   padding-right: 50px;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .text-center {

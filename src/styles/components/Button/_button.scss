@@ -36,20 +36,21 @@
     &.blue {
         background-color: var(--main-color);
         &:hover {
-            background-color: var(--yellow-color);
+            background-color: #657dfc;
             color: #fff;
         }
     }
     &.green {
         background-color: var(--green-color);
         &:hover {
-            background-color: var(--yellow-color);
+            background-color: #3df6e5;
+            color: #fff;
         }
     }
    &.pink {
     background-color: var(--pink-color);
     &:hover {
-        background-color: var(--green-color);
+        background-color: #fe5889;
         color: #fff;
     }
    }

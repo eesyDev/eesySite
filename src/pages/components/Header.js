@@ -19,16 +19,16 @@ function Header() {
                                     <Link href='/'>Главная</Link>
                                 </li>
                                 <li className='mx-4'>
-                                    <Link href='/'>Услуги</Link>
+                                    <Link href='/services'>Услуги</Link>
                                 </li>
                                 <li className='mx-4'>
-                                    <Link href='/'>Проекты</Link>
+                                    <Link href='/projects'>Проекты</Link>
                                 </li>
                                 <li className='mx-4'>
-                                    <Link href='/'>Блог</Link>
+                                    <Link href='/blog'>Блог</Link>
                                 </li>
                                 <li className='mx-4'>
-                                    <Link href='/'>Контакты</Link>
+                                    <Link href='/contacts'>Контакты</Link>
                                 </li>
                             </ul>
                         </nav>

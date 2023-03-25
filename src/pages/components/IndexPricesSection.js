@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 function IndexPricesSection() {
   return (
-    <div className='index-prices'>
+    <div className='index-prices mt-[100px]'>
         <div className='container'>
             <h2 className='sub-title text-center'>Немного о ценах</h2>
             <div className='index-prices__inner flex justify-between'>
