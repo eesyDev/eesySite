@@ -1,0 +1,126 @@
+.service {
+    width: 48%;
+    padding: 40px;
+    color: #fff;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    ul {
+        margin-top: 30px;
+    } 
+    li {
+        padding-left: 25px;
+        position: relative;
+        margin: 10px 0;
+        &:before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #4A63EC;
+        }
+    }
+    h3 {
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+    &:nth-child(4n+2) {
+        background-color: var(--green-color);
+    }
+    &:nth-child(4n+1) {
+        background-color: #0834A0;
+    }
+    &:nth-child(4n+3) {
+        background-color: #4A63EC;
+        ul li:before {
+            color: #26DDFF;
+        }
+    }
+    &:nth-child(4n+4) {
+        background-color: #799EFA;
+        ul li:before {
+            color: var(--pink-color);
+        }
+    }
+    &__price {
+        font-size: 25px;
+        font-weight: 600;
+        .from {
+            font-weight: 400;
+            margin-right: 10px;
+        }
+        .sign {
+            margin-left: 10px;
+        }
+    }
+}
+
+.packages {
+    padding: 100px 0;
+    background: url('../../../../public/img/package_bg.png');
+    p {
+        font-size: 18px;
+    }
+    .package {
+        width: 48%;
+        padding: 40px 70px;
+        box-shadow: 0px 4px 40px rgba(74, 99, 236, 0.15);
+        border-radius: 20px;
+        margin-bottom: 50px;
+        position: relative;
+        background-color: #fff;
+        text-align: center;
+        h4 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        &__price {
+            font-size: 35px;
+            font-weight: 600;
+            color: #2554CD;
+            margin-bottom: 30px;
+            .from {
+                margin-right: 10px;
+                font-size: 20px;
+                font-weight: 500;
+                color: #000;
+            }
+            .sign {
+                margin-left: 10px;
+            }
+        }
+        ul {
+            text-align: left;
+            width: 70%;
+            display: block;
+            margin: 0 auto;
+            li {
+                padding-left: 25px;
+                position: relative;
+                margin: 10px 0;
+                &:before {
+                    content: '\2713';
+                    position: absolute;
+                    left: 0;
+                    color: #4A63EC;
+                }
+            }
+        }
+        &__link {
+            border: 2px solid var(--main-color);
+            color: var(--main-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 50px;
+            border-radius: 20px;
+            width: fit-content;
+            padding: 0 80px;
+            margin: 30px auto 0;
+            transition: all .2s ease;
+            &:hover {
+                background: var(--main-color);
+                color: #fff;
+            }
+        }
+    }
+}

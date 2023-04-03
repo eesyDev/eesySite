@@ -2,6 +2,7 @@ import React from 'react';
 import { AdvantageIllustration } from '@/illustrations';
 import { CheckBorderedIcon } from '@/icons';
 import Button from './Button';
+import LottiePlayerFunc from './LottiePlayer';
 
 function Advantage() {
   return (
@@ -9,7 +10,9 @@ function Advantage() {
         <div className='container'>
             <div className='advantage__inner flex'>
                 <div className='w-6/12 advantage__illustration'>
-                    <AdvantageIllustration/>
+                    <LottiePlayerFunc
+						src='../lotties/advantage.json'
+					/>
                 </div>
                 <div className='w-6/12 advantage__content'>
                   <h2 className='advantage__title sub-title mb-8'>Почему стоит выбрать нас?</h2>

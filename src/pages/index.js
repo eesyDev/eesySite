@@ -32,7 +32,7 @@ export default function Home() {
           title='Откройте новые возможности в онлайн-бизнесе'
           descr='Увеличьте онлайн-продажи с помощью профессионального интернет магазина и продвижения в Google, Kaspi и instagram'
           classes="index"
-          illustration={IndexHero}
+          illustration='./lotties/index_hero.json'
         />
         <ProposalSection />
         <ReasonSection/>

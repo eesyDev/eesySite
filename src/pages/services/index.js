@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
-import { ServicesHeroIllustration } from '@/illustrations';
+import Link from 'next/link';
+import { fetchServices } from '@/redux/slices/services_slice';
+import { fetchPackages } from '@/redux/slices/package_slice';
 
 function indexServices() {
+  const dispatch = useDispatch();
+  const { servicesData } = useSelector(state => state.services);
+  const packageData = useSelector(state => state.packages.packagesData);
+  const loading = useSelector(state => state.loading);
+  const error = useSelector(state => state.error);
+
+
+  useEffect(() => {
+    dispatch(fetchServices())
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchPackages())
+  }, [dispatch]);
+
   return (
     <>
       <Head>
@@ -19,9 +37,59 @@ function indexServices() {
         <Hero
           title='Услуги'
           descr='Увеличьте онлайн-продажи с помощью профессионального интернет магазина и продвижения в Google, Kaspi и instagram'
-          illustration={ServicesHeroIllustration}
+          illustration='../lotties/services.json'
           classes='services'
         />
+        <div className='container'>
+			<div className='services__wrapper mt-[200px] flex flex-wrap justify-between'>
+				{
+				loading ? (
+					<div>Loading</div>
+				) : error ? (
+					<div>Error</div>
+				) : !servicesData ? (
+					<div>Not found</div>
+				) : (
+					
+					servicesData?.map(service => (
+						<div key={service.id} className='service'>
+						<h3>{service.title}</h3>
+						<div className='service__description'
+						dangerouslySetInnerHTML={{ __html: service.description }}
+						/>
+						<div className='service__price'><span className='from'>от</span>{service.price}<span className='sign'>₸</span></div>
+						</div>
+					))           
+				)
+				}
+			</div>
+		</div>
+		<div className='packages'>
+			<div className='container'>
+				<h2 className='sub-title text-center mb-[30px]'>Пакеты</h2>
+				<p className='w-9/12 flex m-auto text-center '>особенность веб-сайта заключается в том, что вы можете отслеживать данные и измерять свои результаты, направляя свой бизнес в правильное русло</p>
+			{
+				loading ? (
+				<div>Loading</div>
+				) : error ? (
+				<div>Error</div>
+				) : !packageData ? (
+				<div>Not found</div>
+				) : (
+				<div className='packages__wrapper flex flex-wrap justify-between mt-[50px]'>
+				{packageData.map(packageItem => (
+					<div key={packageItem.id} className='package'>
+						<h4>{packageItem.title}</h4>
+						<div className='package__price'><span className='from'>от</span>{packageItem.price}<span className='sign'>₸</span></div>
+						<div className='package__descr' dangerouslySetInnerHTML={{ __html: packageItem.description }}/>
+						<Link href='#' className='package__link'>Подробнее</Link>
+					</div>
+					)) }
+				</div>          
+				)
+			}
+			</div>
+        </div>
         <Footer/>
       </main>
     </>

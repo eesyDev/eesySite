@@ -19,7 +19,7 @@ function index() {
         <Hero
           title='Blog'
           descr='blog lorem ipsum dolor sit amet lore mauris'
-          illustration={BlogHeroIllustration}
+          illustration='../lotties/blog.json'
           classes='blog'
         />
         <Footer/>

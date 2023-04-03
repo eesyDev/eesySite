@@ -1,8 +1,11 @@
 import React from 'react';
 import Button from './Button';
+import dynamic from 'next/dynamic';
+// import '@lottiefiles/lottie-player';
+import LottiePlayerFunc from './LottiePlayer';
 
 function Hero(props) {
-	const Illustration = props.illustration
+	// const LottiePlayer = dynamic(() => import('@lottiefiles/lottie-player'), { ssr: false });
   return (
     <div className='hero'>
       <div className='container'>
@@ -17,7 +20,10 @@ function Hero(props) {
 				/>
 			</div>
 			<div className='hero__illustration w-7/12'>
-            	<Illustration/>
+            	<LottiePlayerFunc
+					src={props.illustration}
+				></LottiePlayerFunc>
+				
             </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ function index() {
         <Hero
           title='Контакты'
           descr="Контакты"
-          illustration={ContactsHeroIllustration}
+          illustration='../lotties/contacts.json'
           classes='contacts'
         />
         <Footer/>

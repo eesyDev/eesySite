@@ -1,11 +1,29 @@
-import React from 'react';
-import Head from 'next/head'
+import React, { useEffect } from 'react';
+import Head from 'next/head';
+import { useSelector, useDispatch } from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
-import { ProjectsHeroIllustration } from '@/illustrations';
+import { fetchProjects } from '@/redux/slices/project_slice';
 
 function indexProjects() {
+  const dispatch = useDispatch();
+  const { projectsData, loading, error } = useSelector(state => state.projects)
+  useEffect(() => {
+    dispatch(fetchProjects())
+  }, [dispatch]);
+
+  const leftColumn = []
+  const rightColumn = []
+
+  projectsData?.forEach((item, index) => {
+    if (index % 2 === 0) {
+      leftColumn.push(item);
+    } else {
+      rightColumn.push(item);
+    }
+  });
+
   return (
     <>
       <Head>
@@ -19,9 +37,39 @@ function indexProjects() {
         <Hero
           title='Проекты'
           descr='Увеличьте онлайн-продажи с помощью профессионального интернет магазина и продвижения в Google, Kaspi и instagram'
-          illustration={ProjectsHeroIllustration}
+          illustration='../lotties/projects.json'
           classes='services'
         />
+        <div className='projects flex'>
+          <div className='w-5/12 projects__left'></div>
+          {
+            loading ? (
+              <div>Loading</div>
+            ) : error ? (
+              <div>Error</div>
+            ) : !projectsData ? (
+              <div>Not found</div>
+            ) : (
+              <div className='w-7/12 projects__wrapper flex'>
+                <div className='projects__wrapper-left w-1/2'>
+                  {
+                    leftColumn.map((project) => (
+                      <div>{project.title}</div>
+                    ))
+                  }
+                </div>
+                <div className='projects__wrapper-right w-1/2'>
+                  {
+                    rightColumn.map((project) => (
+                      <div>{project.title}</div>
+                    ))
+                  }
+                </div>
+              </div>
+            )
+          }
+          
+        </div>
         <Footer/>
       </main>
     </>

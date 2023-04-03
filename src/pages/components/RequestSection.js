@@ -3,13 +3,16 @@ import { RequestIllustration } from '@/illustrations';
 import Button from './Button';
 import { Whatsapp, Telegram, Instagram, Git } from '@/icons';
 import Link from 'next/link';
+import LottiePlayerFunc from './LottiePlayer';
 
 function RequestSection() {
   return (
     <div className='request container'>
         <div className='request__wrapper flex justify-between'>
             <div className='request__illustration w-4/12'>
-                <RequestIllustration/>
+                <LottiePlayerFunc
+						src='../lotties/social.json'
+                />
             </div>
             <div className='request__content w-7/12 flex flex-col justify-center'>
                 <h2 className='request__title'>Оставьте заявку</h2>
