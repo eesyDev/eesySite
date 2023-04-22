@@ -8,4 +8,17 @@
         max-width: 170px;
         display: flex;
     }
+    &__cta {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        &__cta {
+            .btn {
+                display: none;
+            }
+        }
+    }
 }

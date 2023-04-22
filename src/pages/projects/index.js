@@ -5,6 +5,9 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import { fetchProjects } from '@/redux/slices/project_slice';
+import ProjectCard from '../components/ProjectCard';
+import HowItWorksSection from '../components/HowItWorksSection';
+import RequestSection from '../components/RequestSection';
 
 function indexProjects() {
   const dispatch = useDispatch();
@@ -24,6 +27,7 @@ function indexProjects() {
     }
   });
 
+
   return (
     <>
       <Head>
@@ -38,38 +42,56 @@ function indexProjects() {
           title='Проекты'
           descr='Увеличьте онлайн-продажи с помощью профессионального интернет магазина и продвижения в Google, Kaspi и instagram'
           illustration='../lotties/projects.json'
-          classes='services'
+          classes='projects'
         />
-        <div className='projects flex'>
-          <div className='w-5/12 projects__left'></div>
-          {
-            loading ? (
-              <div>Loading</div>
-            ) : error ? (
-              <div>Error</div>
-            ) : !projectsData ? (
-              <div>Not found</div>
-            ) : (
-              <div className='w-7/12 projects__wrapper flex'>
-                <div className='projects__wrapper-left w-1/2'>
-                  {
-                    leftColumn.map((project) => (
-                      <div>{project.title}</div>
-                    ))
-                  }
+        <div className='projects flex mt-[150px] mb-[100px]'>
+          <div className='container'>
+            <div className='flex projects__inner'>
+            <div className='w-5/12 projects__left'>
+              <h2 className='main-title'>Выполненные проекты</h2>
+              <p className='projects__descr mt-6'>особенность веб-сайта заключается в том, что вы можете отслеживать данные и измерять свои результаты, направляя свой бизнес в правильное русло</p>
+            </div>
+            {
+              loading ? (
+                <div>Loading</div>
+              ) : error ? (
+                <div>Error</div>
+              ) : !projectsData ? (
+                <div>Not found</div>
+              ) : (
+                <div className='w-7/12 projects__wrapper flex'>
+                  <div className='projects__wrapper-left w-1/2 px-4'>
+                    {
+                      leftColumn.map((project) => (
+                        <ProjectCard
+                          key={project.id}
+                          title={project.title}
+                          link={project.link}
+                          service_title={project.service[0].title}
+                        />
+                      ))
+                    }
+                  </div>
+                  <div className='projects__wrapper-right w-1/2 px-4 pt-10'>
+                    {
+                      rightColumn.map((project) => (
+                        <ProjectCard
+                          key={project.id}
+                          title={project.title}
+                          link={project.link}
+                          service_title={project.service[0].title}
+                        />
+                      ))
+                    }
+                  </div>
                 </div>
-                <div className='projects__wrapper-right w-1/2'>
-                  {
-                    rightColumn.map((project) => (
-                      <div>{project.title}</div>
-                    ))
-                  }
-                </div>
-              </div>
-            )
-          }
-          
+              )
+            }
+            </div>
+          </div>
         </div>
+        <HowItWorksSection/>
+        <div className='mt-[100px]'><RequestSection /></div>
         <Footer/>
       </main>
     </>

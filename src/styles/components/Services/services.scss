@@ -4,35 +4,9 @@
     color: #fff;
     border-radius: 20px;
     margin-bottom: 50px;
-    ul {
-        margin-top: 30px;
-    } 
-    li {
-        padding-left: 25px;
-        position: relative;
-        margin: 10px 0;
-        &:before {
-            content: '\2713';
-            position: absolute;
-            left: 0;
-            color: #4A63EC;
-        }
-    }
     h3 {
         font-size: 30px;
         margin-bottom: 35px;
-    }
-    &:nth-child(4n+2) {
-        background-color: var(--green-color);
-    }
-    &:nth-child(4n+1) {
-        background-color: #0834A0;
-    }
-    &:nth-child(4n+3) {
-        background-color: #4A63EC;
-        ul li:before {
-            color: #26DDFF;
-        }
     }
     &:nth-child(4n+4) {
         background-color: #799EFA;
@@ -51,8 +25,24 @@
             margin-left: 10px;
         }
     }
+    
 }
-
+.services-page {
+    .request {
+        background-color: #855cf2;
+        &__illustration {
+            &:before {
+                background-color: #ed6cff;
+            }
+        }
+    }
+    .footer__bottom {
+        background-color: #855cf2;
+    }
+}
+.services__wrapper {
+    min-height: 600px;
+}
 .packages {
     padding: 100px 0;
     background: url('../../../../public/img/package_bg.png');
@@ -124,3 +114,72 @@
         }
     }
 }
+
+
+.accordion-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+  }
+  
+  .accordion-slider-item {
+    flex: 0 0 120px;
+    margin-right: 10px;
+    position: relative;
+    scroll-snap-align: start;
+    transition: flex-grow 0.1s ease-in-out, flex-basis 0.1s ease-in-out;
+    max-height: inherit;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #eae9e9;
+    box-sizing: border-box;
+    padding: 20px;
+    ul {
+        margin-top: 30px;
+    } 
+    li {
+        padding-left: 25px;
+        position: relative;
+        margin: 10px 0;
+        &:before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #4A63EC;
+        }
+    }
+    &-header {
+        font-size: 1em;
+    }
+    &.active {
+        flex: 1 0 auto;
+        z-index: 1;
+        background-color: #59dfdd;
+        color: #fff;
+        .accordion-slider-item-header {
+            font-size: 1.4em;
+            h2 {
+                transform: rotate(0);
+            }
+        }
+        .accordion-slider-item-content {
+            opacity: 1;
+            visibility: visible;
+            // display: block;
+            // max-height: inherit;
+        }
+    }
+    .accordion-slider-item-content {
+        opacity: 0;
+        visibility: hidden;
+        // display: none;
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+      }
+  }
+  

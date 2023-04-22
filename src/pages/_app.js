@@ -10,7 +10,7 @@ import styles from '../styles/styles.css'
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const [bodyClassName, setBodyClassName] = useState('');
+  const [bodyClassName, setBodyClassName] = useState(router.pathname === '/' ? 'home' : '');
 
   useEffect(() => {
     const handleRouteChange = (url) => {

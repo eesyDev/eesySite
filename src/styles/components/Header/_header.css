@@ -1,1 +1,1 @@
-.header{position:absolute;background-color:rgba(0,0,0,0);z-index:2;top:0;left:0}.header__logo a{max-width:170px;display:flex}
+.header{position:absolute;background-color:rgba(0,0,0,0);z-index:2;top:0;left:0}.header__logo a{max-width:170px;display:flex}.header__cta{display:flex}@media screen and (max-width: 768px){.header__cta .btn{display:none}}

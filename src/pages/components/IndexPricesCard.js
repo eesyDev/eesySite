@@ -10,7 +10,7 @@ function IndexPricesCard(props) {
             <span className='index-prices-card__price mb-4 block'><span className='from mr-3'>от</span><span className='price'>{props.price}</span></span>
             <ul className='index-prices-card__service-list'>
                 {props.serviceList.map((service) =>(
-                    <li className='mb-3'>
+                    <li className='mb-3' key={service}>
                         <i className='mr-2'><CheckIcon/></i>
                         {service}
                     </li>

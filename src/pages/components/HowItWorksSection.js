@@ -1,6 +1,7 @@
 import React from 'react';
 import { HowItWorksIconOne, HowItWorksIconTwo, HowItWorksIconThree, Arrow } from '@/icons';
 import Button from './Button';
+import RequestButton from './RequestButton';
 
 function HowItWorksSection() {
   return (
@@ -33,7 +34,7 @@ function HowItWorksSection() {
                 </div>
             </div>
             <div className='how-it-works__cta mt-[80px] flex justify-center'>
-                <Button
+                <RequestButton
                     classes='btn btn-solid blue'
                     content='Оставить заявку'
                 />

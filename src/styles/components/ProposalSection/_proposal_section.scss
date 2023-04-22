@@ -3,4 +3,18 @@
     &__title {
         margin-bottom: 80px;
     }
+    &__inner {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .proposal {
+        background-color: #EEF4FD;
+        padding: 80px 0;
+        margin-top: 0;
+        &__title {
+            margin-bottom: 50px;
+        }
+    }
 }

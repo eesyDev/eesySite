@@ -1,1 +1,1 @@
-.proposal{margin-top:100px}.proposal__title{margin-bottom:80px}
+.proposal{margin-top:100px}.proposal__title{margin-bottom:80px}.proposal__inner{flex-wrap:wrap}@media screen and (max-width: 768px){.proposal{background-color:#eef4fd;padding:80px 0;margin-top:0}.proposal__title{margin-bottom:50px}}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Head from 'next/head';
 import Header from '../components/Header';
@@ -7,6 +7,7 @@ import Hero from '../components/Hero';
 import Link from 'next/link';
 import { fetchServices } from '@/redux/slices/services_slice';
 import { fetchPackages } from '@/redux/slices/package_slice';
+import RequestSection from '../components/RequestSection';
 
 function indexServices() {
   const dispatch = useDispatch();
@@ -15,6 +16,11 @@ function indexServices() {
   const loading = useSelector(state => state.loading);
   const error = useSelector(state => state.error);
 
+  const [activeIndex, setActiveIndex] = useState(1);
+
+  const handleItemClick = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
   useEffect(() => {
     dispatch(fetchServices())
@@ -32,7 +38,7 @@ function indexServices() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className='home services-page'>
         <Header/>
         <Hero
           title='Услуги'
@@ -50,16 +56,23 @@ function indexServices() {
 				) : !servicesData ? (
 					<div>Not found</div>
 				) : (
-					
-					servicesData?.map(service => (
-						<div key={service.id} className='service'>
-						<h3>{service.title}</h3>
-						<div className='service__description'
-						dangerouslySetInnerHTML={{ __html: service.description }}
-						/>
-						<div className='service__price'><span className='from'>от</span>{service.price}<span className='sign'>₸</span></div>
+					<div className="accordion-slider">
+					{servicesData?.map((service, index) => (
+						<div
+						key={index}
+						className={`accordion-slider-item ${activeIndex === index ? "active" : ""} `}
+						onClick={() => handleItemClick(index)}
+						>
+							<div className="accordion-slider-item-header">
+								<h2>{service.title}</h2>
+							</div>
+							<div className="accordion-slider-item-content">
+							<div dangerouslySetInnerHTML={{ __html: service.description }}/>
+							<div className='service__price'><span className='from'>от</span>{service.price}<span className='sign'>₸</span></div>
+							</div>
 						</div>
-					))           
+					))}
+					</div>        
 				)
 				}
 			</div>
@@ -90,6 +103,7 @@ function indexServices() {
 			}
 			</div>
         </div>
+		<RequestSection/>
         <Footer/>
       </main>
     </>

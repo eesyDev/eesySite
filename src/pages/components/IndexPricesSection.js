@@ -10,18 +10,21 @@ function IndexPricesSection() {
             <h2 className='sub-title text-center'>Немного о ценах</h2>
             <div className='index-prices__inner flex justify-between'>
                 <IndexPricesCard
+                    id='1'
                     title='Интернет-магазин'
                     subtitle='на базе шаблона'
                     price='150 000 ₸'
                     serviceList={['разработка шаблона', 'подключение домена', 'залив на хостинг', 'подключение платежных систем', 'загрузка товаров', 'наполнение контентом']}
                 />
                 <IndexPricesCard
+                    id='4'
                     title='Интернет-магазин'
                     subtitle='индивидуальная разработка'
                     price='250 000 ₸'
                     serviceList={['разработка шаблона', 'подключение домена', 'залив на хостинг', 'подключение платежных систем', 'загрузка товаров', 'наполнение контентом']}
                 />
                 <IndexPricesCard
+                    id='3'
                     title='Одностраничник'
                     subtitle=''
                     price='100 000 ₸'

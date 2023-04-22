@@ -3,6 +3,7 @@
     border-radius: 25px;
     padding: 30px;
     margin: 0 15px;
+    width: calc(25% - 30px);
     &__inner {
         display: flex;
         flex-direction: column;
@@ -43,5 +44,37 @@
         font-size: 1.3em;
         font-weight: 500;
         margin-bottom: 30px;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .proposal-card {
+        padding: 30px 15px;
+        &__icon {
+            width: 80px;
+            height: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .proposal-card {
+        width: calc(50% - 30px);
+        margin-bottom: 30px;
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .proposal-card {
+        margin: 0 10px 20px;
+        width: calc(50% - 20px);
+    }
+}
+@media screen and (max-width: 640px) {
+    .proposal-card {
+        margin: 0 0 20px;
+        width: 100%;
     }
 }

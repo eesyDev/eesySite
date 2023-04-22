@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProjects } from '@/redux/slices/project_slice';
 import ProjectCard from './ProjectCard';
 import Link from 'next/link';
 import { OnlineShop, Picture, Internet } from '@/icons';
 
 function ProjectsSection() {
+
+    const dispatch = useDispatch();
+    const { projectsData, loading, error } = useSelector(state => state.projects)
+    useEffect(() => {
+      dispatch(fetchProjects())
+    }, [dispatch]);
+  
+    const leftColumn = []
+    const rightColumn = []
+
+    const sliced_arr = projectsData?.slice(0, 4)
+  
+    sliced_arr?.forEach((item, index) => {
+      if (index % 2 === 0) {
+        leftColumn.push(item);
+      } else {
+        rightColumn.push(item);
+      }
+    });
+
+
   return (
     <div className='projects-section mt-[100px]'>
         <div className='container'>
@@ -15,28 +38,28 @@ function ProjectsSection() {
                 </div>
                 <div className='projects-section__cards flex w-7/12'>
                     <div className='flex flex-col w-1/2 px-4'>
-                        <ProjectCard
-                            icon={OnlineShop}
-                            title='Проект интернет-магазин'
-                            link='/'
-                        />
-                        <ProjectCard
-                            icon={Internet}
-                            title='Проект интернет-магазин'
-                            link='/'
-                        />
+                        {
+                        leftColumn.map((project) => (
+                            <ProjectCard
+                            key={project.id}
+                            title={project.title}
+                            link={project.link}
+                            service_title={project.service[0].title}
+                            />
+                        ))
+                        }
                     </div>
                     <div className='flex flex-col w-1/2 px-4 pt-10'>
+                    {
+                      rightColumn.map((project) => (
                         <ProjectCard
-                            icon={Picture}
-                            title='Проект интернет-магазин'
-                            link='/'
+                          key={project.id}
+                          title={project.title}
+                          link={project.link}
+                          service_title={project.service[0].title}
                         />
-                        <ProjectCard
-                            icon={Internet}
-                            title='Проект интернет-магазин'
-                            link='/'
-                        />
+                      ))
+                    }
                     </div>
                 </div>
             </div>

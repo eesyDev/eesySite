@@ -1,7 +1,7 @@
 import React from 'react';
 import { LogoDark } from '@/icons';
 import Link from 'next/link';
-import Button from './Button';
+import RequestButton from './RequestButton';
 
 function Footer() {
   return (
@@ -21,13 +21,13 @@ function Footer() {
                             <Link href='/'>Главная</Link>
                         </li>
                         <li className='my-4'>
-                            <Link href='/'>Услуги</Link>
+                            <Link href='/services'>Услуги</Link>
                         </li>
                         <li className='my-4'>
-                            <Link href='/'>Проекты</Link>
+                            <Link href='/projects'>Проекты</Link>
                         </li>
                         <li className='my-4'>
-                            <Link href='/'>Контакты</Link>
+                            <Link href='/contacts'>Контакты</Link>
                         </li>
                     </ul>
                 </div>
@@ -57,8 +57,8 @@ function Footer() {
                 <div className='footer__column-wrap flex flex-col '>
                     <Link href="mailto:info@eesydev.kz" className='mb-4'>info@eesydev.kz</Link>
                     <Link href='tel:+77055676622' className='mb-4'>+7 705 567 66 22</Link>
-                    <Button
-                        classes="btn btn-solid blue small"
+                    <RequestButton
+                        classes="btn btn-solid blue small cc"
                         content="Заказать звонок"
                     />
                 </div>
